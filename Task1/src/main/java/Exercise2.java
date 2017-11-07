@@ -26,6 +26,7 @@ public class Exercise2 {
 
     /**
      * Method split array of integer to two parts by "O(n)" difficult
+     *
      * @param vector Array of integer which need to to split
      */
     public static void splitVector(int[] vector) {

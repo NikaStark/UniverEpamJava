@@ -29,20 +29,14 @@ public class Exercise3 {
     }
 
     /**
-     * Sorts an array in descending order by columns
+     * Sorts an array in descending order average value in columns
+     *
      * @param matrix Matrix of integer
      * @param height Count elements in height
-     * @param width Count elements in width
+     * @param width  Count elements in width
      */
     public static void sortDecreasingByAverage(int[][] matrix, int height, int width) {
-        long[] vectorAverage = new long[width];
-        for (int i = 0; i < width; i++) {
-            int[] vector = new int[matrix.length];
-            for (int j = 0; j < height; j++) {
-                vector[j] = matrix[j][i];
-            }
-            vectorAverage[i] = averageInVector(vector);
-        }
+        long[] vectorAverage = createVectorAverage(matrix, height, width);
 
         for (int i = 0; i < width; i++) {
             for (int j = i; j < width; j++) {
@@ -58,8 +52,9 @@ public class Exercise3 {
 
     /**
      * Switching two column in matrix
-     * @param matrix Matrix of integer
-     * @param firstColumn Number of first column
+     *
+     * @param matrix       Matrix of integer
+     * @param firstColumn  Number of first column
      * @param secondColumn Number of second column
      */
     public static void switchColumn(int[][] matrix, int firstColumn, int secondColumn) {
@@ -71,7 +66,29 @@ public class Exercise3 {
     }
 
     /**
+     * Calculate average value in matrix column
+     *
+     * @param matrix Matrix of integer
+     * @param height Count elements in height
+     * @param width  Count elements in width
+     * @return Vector of average value in matrix column
+     */
+    public static long[] createVectorAverage(int[][] matrix, int height, int width) {
+        long[] vectorAverage = new long[width];
+        for (int i = 0; i < width; i++) {
+            int[] vector = new int[matrix.length];
+            for (int j = 0; j < height; j++) {
+                vector[j] = matrix[j][i];
+            }
+            vectorAverage[i] = averageInVector(vector);
+        }
+
+        return vectorAverage;
+    }
+
+    /**
      * Calculating average value in array
+     *
      * @param vector Array of integer
      * @return Average value
      */
@@ -80,7 +97,7 @@ public class Exercise3 {
         for (int number : vector) {
             sum += number;
         }
-        return sum/vector.length;
+        return sum / vector.length;
     }
 
 }

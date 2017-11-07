@@ -29,9 +29,10 @@ public class Exercise1 {
 
     /**
      * Sorts an array in ascending order on a segment
-     * @param vector Array of integer which been sorted
+     *
+     * @param vector       Array of integer which been sorted
      * @param firstElement Element from which starts sorting
-     * @param lastElement Element to which sorting
+     * @param lastElement  Element to which sorting
      */
     public static void sortAscendingOnSegment(int[] vector, int firstElement, int lastElement) {
         for (int i = firstElement; i < lastElement; i++) {
@@ -47,9 +48,10 @@ public class Exercise1 {
 
     /**
      * Sorts an array in descending order on a segment
-     * @param vector Array of integer which been sorted
+     *
+     * @param vector       Array of integer which been sorted
      * @param firstElement Element from which starts sorting
-     * @param lastElement Element to which sorting
+     * @param lastElement  Element to which sorting
      */
     public static void sortDecreasingOnSegment(int[] vector, int firstElement, int lastElement) {
         for (int i = firstElement; i < lastElement; i++) {
