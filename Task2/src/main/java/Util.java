@@ -32,14 +32,6 @@ public class Util {
 
     public static final int MAX_PASSENGERS = 100_000;
 
-    public static void printVehicle(CVehicle[] vehicles) {
-        for (CVehicle vehicle : vehicles) {
-            if (vehicle != null){
-                System.out.println(vehicle.toString());
-            }
-        }
-    }
-
     public static CVehicle[] generatedVehicle(int count) {
         Random random = new Random();
         CVehicle[] vehicles = new CVehicle[count];
@@ -51,14 +43,14 @@ public class Util {
 
     public static CVehicle randomVehicle(int key) {
         Random random = new Random();
-        switch (key + 1) {
-            case 1:
+        switch (key) {
+            case 0:
                 return new CCar(
                         random.nextInt(MAX_CAR_PRICE - MIN_CAR_PRICE) + MIN_CAR_PRICE,
                         random.nextInt(MAX_SPEED),
                         random.nextInt(MAX_ISSUE_YEAR - MIN_ISSUE_YEAR) + MIN_ISSUE_YEAR
                 );
-            case 2:
+            case 1:
                 return new CShip(
                         random.nextInt(MAX_SHIP_PRICE - MIN_SHIP_PRICE) + MIN_SHIP_PRICE,
                         random.nextInt(MAX_SPEED),
@@ -66,7 +58,7 @@ public class Util {
                         random.nextInt(MAX_PASSENGERS),
                         "port" + random.nextInt(MIN_ISSUE_YEAR)
                 );
-            case 3:
+            case 2:
                 return new CPlane(
                         random.nextInt(MAX_PLANE_PRICE - MIN_PLANE_PRICE) + MIN_PLANE_PRICE,
                         random.nextInt(MAX_SPEED),
@@ -74,13 +66,13 @@ public class Util {
                         random.nextInt(MAX_PASSENGERS),
                         random.nextInt(MAX_PLANE_HEIGHT)
                 );
-            case 4:
+            case 3:
                 CVehicle batCar = randomVehicle(1);
                 return new BatCar(batCar.getPrice(), batCar.getSpeed(), batCar.getIssueYear());
-            case 5:
+            case 4:
                 CVehicle ampCar = randomVehicle(1);
                 return new AmphibianCar(ampCar.getPrice(), ampCar.getSpeed(), ampCar.getIssueYear());
-            default: return null;
+            default: throw new IllegalArgumentException();
         }
     }
 
