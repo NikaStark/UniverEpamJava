@@ -13,8 +13,7 @@ public class Exercise2Test {
 
     public void testSplitVectorOnce() throws Exception {
         int length = (int) (Math.random() * 100 + 1);
-        int[] vector = new int[length];
-        vector = Util.generatedVector(length);
+        int[] vector = Util.generatedVector(length);
 
         Exercise2.splitVector(vector);
 
