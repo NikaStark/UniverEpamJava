@@ -101,7 +101,7 @@ public abstract class CVehicle {
      */
     @Override
     public String toString() {
-        return "CVehicle{" + toStringShort();
+        return "CVehicle{" + toStringParameters() + "}";
     }
 
     /**
@@ -109,11 +109,10 @@ public abstract class CVehicle {
      *
      * @return a string representation of this year, not null
      */
-    protected String toStringShort() {
+    protected String toStringParameters() {
         return  "price=" + price +
                 ", speed=" + speed +
-                ", issueYear=" + issueYear +
-                '}';
+                ", issueYear=" + issueYear;
     }
 
 }

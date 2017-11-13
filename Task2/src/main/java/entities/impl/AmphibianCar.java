@@ -24,6 +24,7 @@ public class AmphibianCar extends CCar implements Swimable{
 
     @Override
     public String toString() {
-        return "AmphibianCar{" + this.toStringShort();
+        return "AmphibianCar{" + this.toStringParameters() + "}";
     }
+
 }

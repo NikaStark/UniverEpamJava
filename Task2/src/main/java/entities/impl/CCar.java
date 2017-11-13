@@ -24,11 +24,7 @@ public class CCar extends CVehicle implements Moveable {
 
     @Override
     public String toString() {
-        return "CCar{" + toStringShort();
+        return "CCar{" + toStringParameters() + "}";
     }
 
-    @Override
-    protected String toStringShort() {
-        return super.toStringShort();
-    }
 }

@@ -74,14 +74,14 @@ public class CShip extends CVehicle implements Swimable {
 
     @Override
     public String toString() {
-        return "CShip{" + toStringShort();
+        return "CShip{" + toStringParameters() + "}";
     }
 
     @Override
-    protected String toStringShort() {
-        return "passengers=" + passengers +
-                ", port='" + port + '\'' +
-                super.toStringShort();
+    protected String toStringParameters() {
+        return super.toStringParameters() +
+                ", passengers=" + passengers +
+                ", port='" + port + '\'';
     }
 
 }

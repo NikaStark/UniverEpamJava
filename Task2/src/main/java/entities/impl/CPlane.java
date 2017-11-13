@@ -74,13 +74,14 @@ public class CPlane extends CVehicle implements Flyable {
 
     @Override
     public String toString() {
-        return "CPlane{" + toStringShort();
+        return "CPlane{" + toStringParameters() + "}";
     }
 
     @Override
-    protected String toStringShort() {
-        return "passengers=" + passengers +
-                ", height=" + height +
-                super.toStringShort();
+    protected String toStringParameters() {
+        return super.toStringParameters() +
+                ", passengers=" + passengers +
+                ", height=" + height;
     }
+
 }

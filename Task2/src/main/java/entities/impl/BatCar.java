@@ -24,6 +24,7 @@ public class BatCar extends CCar implements Flyable {
 
     @Override
     public String toString() {
-        return "BatCar{" + this.toStringShort();
+        return "BatCar{" + this.toStringParameters() + "}";
     }
+
 }
