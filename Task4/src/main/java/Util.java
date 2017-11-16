@@ -1,11 +1,13 @@
 import model.Figure;
-import model.impl.Line;
-import model.impl.Point;
-import model.impl.Polygon;
-import model.impl.Triangle;
+import model.impl.*;
 
 import java.util.Random;
 
+/**
+ * Utility class for generate entity
+ *
+ * @author Alex Volochai
+ */
 public class Util {
 
     public static final int MIN_X = -100;
@@ -18,16 +20,31 @@ public class Util {
 
     public static final int MAX_COUNT_POINT_IN_POLYGON = 100;
 
-    public static Figure[] generatedVehicle(int count) {
+    public static final int MAX_COLOR = 10_000;
+
+    /**
+     * Factory method which create array of figures
+     *
+     * @param count    Count of figures you need
+     * @param colorful Flag which switching by color and single-color figures
+     * @return Array of generate figures
+     */
+    public static Figure[] generatedFigure(int count, boolean colorful) {
         Random random = new Random();
         Figure[] figures = new Figure[count];
         for (int i = 0; i < count; i++) {
-            figures[i] = randomFigure(random.nextInt(4));
+            figures[i] = randomFigure(random.nextInt(4) + (colorful ? 4 : 0));
         }
         return figures;
     }
 
-    public static Figure randomFigure(int key) {
+    /**
+     * Method which generate new figure
+     *
+     * @param key switch for different figures
+     * @return New generate figure
+     */
+    private static Figure randomFigure(int key) {
         Random random = new Random();
         switch (key) {
             case 0:
@@ -53,6 +70,14 @@ public class Util {
                     points[i] = new Point((Point) randomFigure(0));
                 }
                 return new Polygon(points);
+            case 4:
+                return new ColorPoint((Point) randomFigure(0), random.nextInt(MAX_COLOR));
+            case 5:
+                return new ColorLine((Line) randomFigure(1), random.nextInt(MAX_COLOR));
+            case 6:
+                return new ColorTriangle((Triangle) randomFigure(2), random.nextInt(MAX_COLOR));
+            case 7:
+                return new ColorPolygon((Polygon) randomFigure(3), random.nextInt(MAX_COLOR));
             default:
                 throw new IllegalArgumentException();
         }
