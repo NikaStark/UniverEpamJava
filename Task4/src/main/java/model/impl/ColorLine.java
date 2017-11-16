@@ -2,6 +2,9 @@ package model.impl;
 
 import model.interfaces.Colorable;
 
+/**
+ * @author Alex Volochai
+ */
 public class ColorLine extends Line implements Colorable {
 
     private int color;
@@ -9,6 +12,10 @@ public class ColorLine extends Line implements Colorable {
     public ColorLine(Point startPoint, Point endPoint, int color) {
         super(startPoint, endPoint);
         this.color = color;
+    }
+
+    public ColorLine(Line line, int color) {
+        this(line.getStartPoint(), line.getEndPoint(), color);
     }
 
     @Override

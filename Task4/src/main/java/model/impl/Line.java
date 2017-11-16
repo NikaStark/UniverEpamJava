@@ -12,6 +12,7 @@ public class Line extends Figure {
     private Point endPoint;
 
     public Line(Point startPoint, Point endPoint) {
+        if (!validate(startPoint, endPoint)) throw new IllegalArgumentException();
         this.startPoint = startPoint;
         this.endPoint = endPoint;
     }
@@ -21,6 +22,7 @@ public class Line extends Figure {
     }
 
     public void setStartPoint(Point startPoint) {
+        if (!validate(startPoint, this.endPoint)) throw new IllegalArgumentException();
         this.startPoint = startPoint;
     }
 
@@ -29,7 +31,20 @@ public class Line extends Figure {
     }
 
     public void setEndPoint(Point endPoint) {
+        if (!validate(this.startPoint, endPoint)) throw new IllegalArgumentException();
         this.endPoint = endPoint;
+    }
+
+    /**
+     * Length of line
+     *
+     * @return length in double format
+     */
+    public double length() {
+        return Math.sqrt(
+                Math.pow(endPoint.getX() - startPoint.getX(), 2) +
+                Math.pow(endPoint.getY() - startPoint.getY(), 2)
+        );
     }
 
     @Override
@@ -60,4 +75,16 @@ public class Line extends Figure {
     protected String toStringParameters() {
         return startPoint.toString() + endPoint.toString();
     }
+
+    /**
+     * Checking mutual arrangement of two point
+     *
+     * @param a first point
+     * @param b second point
+     * @return True if two points not equal
+     */
+    private boolean validate(Point a, Point b) {
+        return !a.equals(b);
+    }
+
 }

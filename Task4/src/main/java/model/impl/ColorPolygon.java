@@ -14,6 +14,10 @@ public class ColorPolygon extends Polygon implements Colorable {
         this.color = color;
     }
 
+    public ColorPolygon(Polygon polygon, int color) {
+        this(polygon.getPoints(), color);
+    }
+
     @Override
     public int getColor() {
         return color;

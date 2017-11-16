@@ -14,6 +14,10 @@ public class ColorPoint extends Point implements Colorable {
         this.color = color;
     }
 
+    public ColorPoint(Point point, int color) {
+        this(point.getX(), point.getY(), color);
+    }
+
     @Override
     public int getColor() {
         return 0;

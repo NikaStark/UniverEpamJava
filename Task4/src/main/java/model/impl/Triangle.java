@@ -26,6 +26,9 @@ public class Triangle extends Figure {
     }
 
     public void setA(Point a) {
+        if (!validate(a, this.b, this.c)) throw new IllegalArgumentException();
+        this.sideAB.setStartPoint(a);
+        this.sideAC.setStartPoint(a);
         this.a = a;
     }
 
@@ -34,6 +37,9 @@ public class Triangle extends Figure {
     }
 
     public void setB(Point b) {
+        if (!validate(this.a, b, this.c)) throw new IllegalArgumentException();
+        this.sideAB.setEndPoint(b);
+        this.sideBC.setStartPoint(b);
         this.b = b;
     }
 
@@ -42,6 +48,9 @@ public class Triangle extends Figure {
     }
 
     public void setC(Point c) {
+        if (!validate(this.a, this.b, c)) throw new IllegalArgumentException();
+        this.sideAC.setEndPoint(c);
+        this.sideBC.setEndPoint(c);
         this.c = c;
     }
 
@@ -49,24 +58,36 @@ public class Triangle extends Figure {
         return sideAB;
     }
 
-    public void setSideAB(Line sideAB) {
-        this.sideAB = sideAB;
-    }
-
     public Line getSideAC() {
         return sideAC;
-    }
-
-    public void setSideAC(Line sideAC) {
-        this.sideAC = sideAC;
     }
 
     public Line getSideBC() {
         return sideBC;
     }
 
-    public void setSideBC(Line sideBC) {
-        this.sideBC = sideBC;
+    /**
+     * Calculate perimeter of the triangle
+     *
+     * @return perimeter
+     */
+    public double perimeter() {
+        return sideAB.length() + sideAC.length() + sideBC.length();
+    }
+
+    /**
+     * Calculate square of the triangle
+     *
+     * @return square
+     */
+    public double square() {
+        double halfPerimeter = perimeter() / 2;
+        return Math.sqrt(
+                halfPerimeter *
+                (halfPerimeter - sideAB.length()) *
+                (halfPerimeter - sideAC.length()) *
+                (halfPerimeter - sideBC.length())
+        );
     }
 
     @Override
@@ -106,6 +127,14 @@ public class Triangle extends Figure {
         return a.toString() + b.toString() + c.toString();
     }
 
+    /**
+     * Checking mutual arrangement of three point
+     *
+     * @param a first point
+     * @param b second point
+     * @param c third point
+     * @return True if two points not equal
+     */
     private boolean validate(Point a, Point b, Point c) {
         if (!a.equals(b) && !a.equals(c) && !b.equals(c)) {
             if (a.getX() != b.getX() || a.getX() != c.getX()) {

@@ -14,6 +14,10 @@ public class ColorTriangle extends Triangle implements Colorable {
         this.color = color;
     }
 
+    public ColorTriangle (Triangle triangle, int color) {
+        this(triangle.getA(), triangle.getB(), triangle.getC(), color);
+    }
+
     @Override
     public int getColor() {
         return color;
