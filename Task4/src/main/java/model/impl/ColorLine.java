@@ -11,6 +11,7 @@ public class ColorLine extends Line implements Colorable {
 
     public ColorLine(Point startPoint, Point endPoint, int color) {
         super(startPoint, endPoint);
+        if (!validateColor(color)) throw new IllegalArgumentException();
         this.color = color;
     }
 
@@ -24,6 +25,7 @@ public class ColorLine extends Line implements Colorable {
     }
 
     public void setColor(int color) {
+        if (!validateColor(color)) throw new IllegalArgumentException();
         this.color = color;
     }
 
@@ -56,4 +58,5 @@ public class ColorLine extends Line implements Colorable {
         return super.toStringParameters() +
                 ", color=" + color;
     }
+
 }

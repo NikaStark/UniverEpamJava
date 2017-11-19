@@ -11,6 +11,7 @@ public class ColorPolygon extends Polygon implements Colorable {
 
     public ColorPolygon(Point[] points, int color) {
         super(points);
+        if (!validateColor(color)) throw new IllegalArgumentException();
         this.color = color;
     }
 
@@ -24,6 +25,7 @@ public class ColorPolygon extends Polygon implements Colorable {
     }
 
     public void setColor(int color) {
+        if (!validateColor(color)) throw new IllegalArgumentException();
         this.color = color;
     }
 

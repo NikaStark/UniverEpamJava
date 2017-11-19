@@ -9,4 +9,8 @@ public interface Colorable {
 
     int getColor();
 
+    default boolean validateColor(int color) {
+        return color > 0;
+    }
+
 }

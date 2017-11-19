@@ -11,10 +11,11 @@ public class ColorTriangle extends Triangle implements Colorable {
 
     public ColorTriangle(Point a, Point b, Point c, int color) {
         super(a, b, c);
+        if (!validateColor(color)) throw new IllegalArgumentException();
         this.color = color;
     }
 
-    public ColorTriangle (Triangle triangle, int color) {
+    public ColorTriangle(Triangle triangle, int color) {
         this(triangle.getA(), triangle.getB(), triangle.getC(), color);
     }
 
@@ -24,6 +25,7 @@ public class ColorTriangle extends Triangle implements Colorable {
     }
 
     public void setColor(int color) {
+        if (!validateColor(color)) throw new IllegalArgumentException();
         this.color = color;
     }
 

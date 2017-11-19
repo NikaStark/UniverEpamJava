@@ -51,29 +51,30 @@ public class Polygon extends Figure {
     protected String toStringParameters() {
         StringBuilder result = new StringBuilder();
         for (Point point : points) {
-            result.append(point.toString());
+            result.append(point.toString()).append(", ");
         }
+        result.replace(result.length() - 2, result.length(), "");
         return result.toString();
     }
 
     /**
      * Checking the entered points for validity by polygon
+     *
      * @param points - entered points
      * @return true if points valid
      */
     private boolean validate(Point[] points) {
         if (points.length < 4) return false;
-        for (int  i = 0; i < points.length - 1; i++){
-            if(points[i].equals(points[i + 1])) return false;
+        for (int i = 0; i < points.length - 1; i++) {
+            if (points[i].equals(points[i + 1])) return false;
         }
-
-        for (int i = 0; i < points.length - 2; i++) {
-            if (points[i].getX() == points[i + 1].getX() &&
-                    points[i + 1].getX() == points[i + 2 == points.length ? 0 : i + 2].getX())
+        double delta = 0.001;
+        for (int i = 0; i <= points.length - 2; i++) {
+            int temp = i + 2 == points.length ? 0 : i + 2;
+            if (Math.abs((double)(points[temp].getX() - points[i].getX()) / (points[i + 1].getX() - points[i].getX()) -
+                    (double)(points[temp].getY() - points[i].getY()) / (points[i + 1].getY() - points[i].getY())) < delta) {
                 return false;
-            if (points[i].getY() == points[i + 1].getY() &&
-                    points[i + 1].getY() == points[i + 2 == points.length ? 0 : i + 2].getY())
-                return false;
+            }
         }
         return true;
     }

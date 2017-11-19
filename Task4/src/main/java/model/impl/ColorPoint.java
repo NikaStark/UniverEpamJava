@@ -11,6 +11,7 @@ public class ColorPoint extends Point implements Colorable {
 
     public ColorPoint(int x, int y, int color) {
         super(x, y);
+        if (!validateColor(color)) throw new IllegalArgumentException();
         this.color = color;
     }
 
@@ -24,6 +25,7 @@ public class ColorPoint extends Point implements Colorable {
     }
 
     public void setColor(int color) {
+        if (!validateColor(color)) throw new IllegalArgumentException();
         this.color = color;
     }
 

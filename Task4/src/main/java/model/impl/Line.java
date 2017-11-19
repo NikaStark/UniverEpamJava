@@ -73,7 +73,7 @@ public class Line extends Figure {
 
     @Override
     protected String toStringParameters() {
-        return startPoint.toString() + endPoint.toString();
+        return startPoint.toString() + ", " + endPoint.toString();
     }
 
     /**

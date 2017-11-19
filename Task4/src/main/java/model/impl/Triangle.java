@@ -124,7 +124,7 @@ public class Triangle extends Figure {
 
     @Override
     protected String toStringParameters() {
-        return a.toString() + b.toString() + c.toString();
+        return a.toString() + ", " + b.toString() + ", " + c.toString();
     }
 
     /**
@@ -136,14 +136,14 @@ public class Triangle extends Figure {
      * @return True if two points not equal
      */
     private boolean validate(Point a, Point b, Point c) {
+        double delta = 0.001;
         if (!a.equals(b) && !a.equals(c) && !b.equals(c)) {
-            if (a.getX() != b.getX() || a.getX() != c.getX()) {
-                if (a.getY() != b.getY() || a.getY() != c.getY()) {
-                    return true;
-                }
+            if (Math.abs((double) (c.getX() - a.getX()) / (b.getX() - a.getX()) -
+                    (double) (c.getY() - a.getY()) / (b.getY() - a.getY())) < delta) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
 }

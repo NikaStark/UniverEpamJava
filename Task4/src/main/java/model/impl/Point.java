@@ -5,7 +5,7 @@ import model.Figure;
 /**
  * @author Alex Volochai
  */
-public class Point extends Figure{
+public class Point extends Figure {
 
     private int x;
 
@@ -66,5 +66,4 @@ public class Point extends Figure{
         return "x=" + x +
                 ", y=" + y;
     }
-
 }
