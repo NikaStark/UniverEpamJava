@@ -8,7 +8,7 @@ public abstract class Figure {
     }
 
     /**
-     * Outputs this vehicle in short form(without name class) as a {@code String}.
+     * Outputs this figure in short form(without name class) as a {@code String}.
      *
      * @return a string representation of this year, not null
      */

@@ -11,6 +11,7 @@
 
     <modules>
         <module>ClassWorkTasks</module>
+        <module>Module1</module>
         <module>Task0</module>
         <module>Task1</module>
         <module>Task2</module>
