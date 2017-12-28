@@ -1,9 +1,6 @@
 import java.util.Scanner;
 
 /**
- * Дана целочисленная прямоугольная матрица.
- * Упорядочить строки по возрастанию длинны серии одинаковых элементов.
- *
  * @author Alex Volochai
  */
 public class Exercise4 {

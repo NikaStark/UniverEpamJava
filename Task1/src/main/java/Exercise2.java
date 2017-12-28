@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 /**
- * В одномерном массиве сначала положительные потом отрицательные за О(n)
- *
  * @author Alex Volochai
  */
 public class Exercise2 {

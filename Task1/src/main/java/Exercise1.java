@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 /**
- * Упорядочить одномерный масив, вначале отрицательные по возрастанию, затем положительные по убыванию.
- *
  * @author Alex Volochai
  */
 public class Exercise1 {

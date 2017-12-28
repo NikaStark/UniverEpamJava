@@ -1,9 +1,6 @@
 import java.util.Scanner;
 
 /**
- * Дана целочисленная прямоугольная матрица.
- * Упорядочить столбцы по убыванию среднего значения.
- *
  * @author Alex Volochai
  */
 public class Exercise3 {
