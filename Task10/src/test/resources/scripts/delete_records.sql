@@ -1,0 +1,3 @@
+DELETE FROM films;
+
+DELETE FROM genres;

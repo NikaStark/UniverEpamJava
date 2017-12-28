@@ -12,11 +12,18 @@
     <modules>
         <module>ClassWorkTasks</module>
         <module>Module1</module>
+        <module>Module2</module>
+        <module>Module3</module>
         <module>Task0</module>
         <module>Task1</module>
         <module>Task2</module>
         <module>Task4</module>
         <module>Task5</module>
+        <module>Task6</module>
+        <module>Task7</module>
+        <module>Task8</module>
+        <module>Task9</module>
+        <module>Task10</module>
     </modules>
 
     <properties>
@@ -33,15 +40,6 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-
 
     </dependencies>
 
