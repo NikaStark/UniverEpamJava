@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Task6</artifactId>
+    <artifactId>Task5</artifactId>
     <description>Task for 23.11</description>
 
     <dependencies>
