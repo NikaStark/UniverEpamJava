@@ -8,9 +8,6 @@ import util.input.RemoteWeatherData;
 import util.parsers.JSONWeatherDataParser;
 
 /**
- * фримен page 71 реализовать патерн наблюдатель(Weather Station) +
- * присоеденить считываение данных по интернет для датчиков
- *
  * @author Alex Volochai
  */
 public class Main {
